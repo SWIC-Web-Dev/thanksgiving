@@ -1,5 +1,7 @@
 # Thanksgiving Reactivity Assignment (30 Points)
 
+[Overview Video](https://somup.com/cZXODAJC7N)
+
 ## Implementation (12 points)
 
 - Working state management implementation (3 points)
