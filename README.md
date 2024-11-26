@@ -110,7 +110,7 @@ While AI tools are allowed and encouraged, your reflection should demonstrate yo
 5. Event Listener Tips:
 
 - Use event delegation on the form (listen at the form level instead of on individual buttons)
-- Check event.target.id or other identifiers to handle specific elements
+- Check `event.target.id` or other identifiers to handle specific elements
 - Remember event listeners persist between renders - be careful about duplicates
 - Example pattern:
 
