@@ -3,22 +3,28 @@ export default (() => {
   const listeners = [];
 
   return {
-    getState: state,
+    getState() {
+      return state;
+    },
     setState(newState) {
       state = newState;
-      listeners.map((listener) => listener(state));
+      listeners.forEach((listener) => listener(state));
     },
     subscribe(listener) {
       listeners.push(listener);
     },
-    addDish(name, status, assignedTo, estimatedTime, temperature) {
-      state.dishes.push({
-        name,
-        status,
-        assignedTo,
-        estimatedTime,
-        temperature,
-      });
+    addDish({ name, assignedTo, estimatedTime, temperature }) {
+      const newDishes = [
+        ...state.dishes,
+        {
+          name,
+          status: "not started",
+          assignedTo,
+          estimatedTime,
+          temperature,
+        },
+      ];
+      this.setState({ dishes: newDishes });
     },
   };
 })();
