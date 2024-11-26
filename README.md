@@ -28,7 +28,7 @@ Your reflection should be thorough and demonstrate understanding of core concept
 
 ### Development Process (4 points)
 
-- If you used AI tools (like Copilot or ChatGPT):
+- If you used CoPilot or Claude:
   - What prompts did you use?
   - How did you refine these prompts based on the responses?
   - How did you verify the AI suggestions were correct?
