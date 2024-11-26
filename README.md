@@ -1,34 +1,168 @@
-# HTML-Tailwind-JS Template Repo
+# Thanksgiving Reactivity Assignment (30 Points)
 
-This repo should provide a stable template for working with HTML, TailwindCSS, and JavaScript. With the provided VS Code Settings and Extensions, all major linting and formatting should be handled automatically, including Tailwind class formatting 🤞🏾.
+## Implementation (12 points)
 
-## Getting Started
+- Working state management implementation (3 points)
+- Proper component structure and reuse (2 points)
+- Form handling and event delegation (2 points)
+- Styling with Tailwind (5 points)
+  - Clean, centered desktop layout (max-width, margins, padding) (2 points)
+  - Consistent spacing and typography (1 point)
+  - Interactive elements (hover states, transitions) (1 point)
+  - Professional table styling (1 point)
 
-Utilize your GitHub Classroom link or click the "Use this template" button to create a new repo. This will create a new repo with the same structure as this one on your GitHub account.
+Note: While we're focusing on desktop layout for this assignment, responsive design would be important for a production application. Feel free to explore responsive Tailwind classes as a future enhancement!
 
-Clone the repo to your local machine by clicking the green "Code" button. Normally, the easiest way to do this is the GitHub CLI, assuming that you have it installed. If not, you can download it [here](https://cli.github.com/). You also need to run `gh auth login` to authenticate your GitHub account. One other with the GitHub CLI is that you may have to restart your terminal after installing it.
+## Written Reflection (13 points)
 
-![Clone the repo with GitHub CLI](./clone.png)
+Your reflection should be thorough and demonstrate understanding of core concepts. Remember that the majority of points come from showing your understanding, not just having working code!
 
-You'll copy the command by clicking the copy icon there ☝️. Navigate to your `Code` or `Dev` or whatever directory you have where you are keeping your code projects and paste the command in.
+### Core JavaScript Concepts (5 points)
 
-⚠️ DO NOT clone a repo inside another repo. This will cause issues with git and you'll have to delete the inner repo to fix it. Make sure that you are in a directory that is not a git repo before cloning. To put it another way, if you see the annotation `(master)` or `(main)` in your terminal, you are in a git repo. You can check by running `git status`. If you see `fatal: not a git repository (or any of the parent directories): .git`, you are not in a git repo.
+- What is an IIFE? Explain why we use it in our state management system. Include an example of how it creates private scope.
+- Describe how closure works in our state management system. How does it help us maintain and protect our state?
+- What is scope and how does it play a role in both our IIFE and closure implementation?
+- How does our component structure (like `Button` and `DishRow`) demonstrate function composition and reusability?
 
-So, again, make sure you are not in a git repo before cloning this repo. No nested repos, please 🙏:🏾.
+### Development Process (4 points)
 
-First, `cd` into the newly created repo. You can do `ls` to check for it and then type `cd` followed by at least the first few characters of the repo name. You will now have changed into the repo directory (it will probably show `(master)` or `(main)`.
+- If you used AI tools (like Copilot or ChatGPT):
+  - What prompts did you use?
+  - How did you refine these prompts based on the responses?
+  - How did you verify the AI suggestions were correct?
+- What parts of the MDN documentation or class materials did you reference?
+- What debugging challenges did you face and how did you solve them?
+- Starting from the initial code:
+  - What improvements did you make to the component structure?
+  - How did you handle the form submission and state updates?
 
-Now, it's time to install the project's dependencies. You can do this by running `npm install` in the root of the project. This will install all the dependencies listed in the `package.json` file.
+### Reactivity Understanding (4 points)
 
-Summarily, this checks the `package.json` file for the necessary `"dependencies"` and/or `"devDependencies"`. It communicates with the npm registry to download the necessary packages and install them in the `node_modules` directory. This directory is created in the root of the project and is where all the dependencies are stored. This directory is ignored 🙈 by Git because it is so bloated.
+- Explain how our state management system ensures the UI stays in sync with our data
+- How does the `subscribe` function help manage updates?
+- Why is it important to use the state management methods instead of directly modifying data?
 
-Now, open the code up with `code .`. This runs the `code` command (for VS Code) and opens the current directory (`.`) in the editor.
+## Git Commit Guidelines (5 points)
 
-You should see a `.vscode` directory in the root of the project. This directory contains the settings and extensions that are recommended for this project. You should see a notification in the bottom right corner of the editor that says "Recommended Extensions Found". Click "Install All" to install the recommended extensions.
-If you don't, then hopefully 🤞🏾 that means that you have already installed the extensions.
+Write clear, descriptive commit messages that explain WHY changes were made, not just WHAT changed.
 
-Check out the files - you'll see HTML, CSS, and JS files (if needed) in `src`.
+Each commit should:
 
-> Do what must be done.
+- Start with a verb (Add, Update, Fix, Refactor, etc.)
+- Explain the purpose of the change
+- Be focused on a single responsibility
 
-You'll want to switch back over to your terminal and run `npm run dev` to start the Vite local server. There'll be a message in the terminal that says `Server running at http://localhost:3000`. Open that link in your browser to see the project. As you make changes to the files, the browser will automatically refresh to show the changes 🧑‍💻.
+Good examples:
+
+- "Add state management using IIFE for data privacy"
+- "Implement form submission with event delegation"
+- "Refactor Button component to use object parameters"
+- "Update table styles for better visual hierarchy"
+
+Bad examples:
+
+- "Update code"
+- "Fix stuff"
+- "WIP"
+- "Changes from last night"
+
+Aim for 5-10 focused commits that tell the story of your development process.
+
+## Optional Extra Credit (5 points)
+
+Add a feature to the application, such as:
+
+- Ability to mark dishes as complete
+- Filtering dishes by status
+- Sorting dishes by estimated time
+
+Explain how you maintained the state management patterns while adding your feature.
+
+## Note
+
+While AI tools are allowed and encouraged, your reflection should demonstrate your understanding of the concepts. Simply getting the code to work is worth less than showing you understand why and how it works!
+
+## Helpful Tips?
+
+1. State Management
+
+   - Review the bank vault analogy from class - your state management should follow similar principles
+   - Remember that all UI updates should flow through your state system
+
+2. Component Structure
+
+   - Think of each component as a template factory that takes data and returns HTML
+   - Look for patterns in the UI that can be reused (like table rows)
+
+3. Styling Tips
+
+   - Use `max-w-4xl mx-auto` for a clean centered layout
+   - Add `transition-colors` to interactive elements
+   - Consider using Tailwind's `space-y-` utilities for consistent form spacing
+
+4. Common Gotchas
+
+   - Don't modify state directly - always use your state management methods
+   - Remember to handle form submission with `preventDefault()`
+
+5. Event Listener Tips:
+
+- Use event delegation on the form (listen at the form level instead of on individual buttons)
+- Check event.target.id or other identifiers to handle specific elements
+- Remember event listeners persist between renders - be careful about duplicates
+- Example pattern:
+
+  ```js
+  document.addEventListener("submit", (event) => {
+    if (event.target.id === "dishForm") {
+      event.preventDefault();
+      // Handle the form submission here
+    }
+  });
+  ```
+
+## Additional Helper Snippets
+
+### State Management Template
+
+```js
+export default (() => {
+  let state = { dishes: [] };
+  const listeners = [];
+
+  return {
+    getState() {
+      return state;
+    },
+    // Add your methods here...
+  };
+})();
+```
+
+### Component Template (using object parameter for clean code)
+
+```js
+// Instead of multiple parameters, we use a single object parameter
+// This is cleaner and more maintainable
+export default function DishRow({ name, status, assignedTo }) {
+  return `
+    <div class="...">${name} - ${status}</div>
+  `;
+}
+
+// Single usage:
+DishRow({
+  name: "Turkey",
+  status: "cooking",
+  assignedTo: "Dad",
+});
+
+// Using with array map:
+const dishes = [
+  { name: "Turkey", status: "cooking", assignedTo: "Dad" },
+  { name: "Pie", status: "not started", assignedTo: "Mom" },
+];
+
+// This works because map passes each object to our component
+dishes.map((dish) => DishRow(dish)).join("");
+```
