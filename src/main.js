@@ -50,6 +50,10 @@ state.subscribe(render);
 
 render();
 
+document.addEventListener("click", () => {
+  console.log("Clicked!");
+});
+
 // Using event delegation for form submission
 document.addEventListener("submit", (event) => {
   if (event.target.id === "dishForm") {
