@@ -1,3 +1,5 @@
+import Button from "../button.js";
+
 export default function DishRow({
   name,
   status,
@@ -12,6 +14,7 @@ export default function DishRow({
       <td>${assignedTo}</td>
       <td>${estimatedTime}</td>
       <td>${temperature}</td>
+      <td>${Button({ text: "Delete", additionalClasses: "bg-red-500 rounded text-white px-2 py-1" })}</td>
     </tr>
   `;
 }
