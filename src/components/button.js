@@ -1,4 +1,5 @@
 export default function Button({
+  // Default values for the button
   type = "button",
   additionalClasses = "",
   text,

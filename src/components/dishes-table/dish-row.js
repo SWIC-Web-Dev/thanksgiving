@@ -5,14 +5,13 @@ export default function DishRow({
   estimatedTime,
   temperature,
 }) {
-  // Fixed: Object destructuring
   return `
-    <tr class="border-b">
-      <td class="p-2">${name}</td>
-      <td class="p-2">${status}</td>
-      <td class="p-2">${assignedTo}</td>
-      <td class="p-2">${estimatedTime}</td>
-      <td class="p-2">${temperature}</td>
+    <tr class="border-b *:p-2">
+      <td>${name}</td>
+      <td>${status}</td>
+      <td>${assignedTo}</td>
+      <td>${estimatedTime}</td>
+      <td>${temperature}</td>
     </tr>
   `;
 }

@@ -10,6 +10,7 @@ const app = document.querySelector("#app");
 state.setState({ dishes: initialDishes });
 
 function render() {
+  // Destructure the known property from the state
   const { dishes } = state.getState();
 
   const formFields = [
@@ -30,12 +31,13 @@ function render() {
             }),
           )
           .join("")}
-        ${Button({
-          type: "submit",
-          additionalClasses:
-            "w-full bg-indigo-500 text-white px-4 py-2 hover:bg-indigo-600",
-          text: "Add Dish",
-        })}
+        
+          ${Button({
+            type: "submit",
+            additionalClasses:
+              "w-full bg-indigo-500 text-white px-4 py-2 hover:bg-indigo-600",
+            text: "Add Dish",
+          })}
       </form>
       
       ${DishesTable(dishes)}
@@ -43,7 +45,9 @@ function render() {
   `;
 }
 
+// We want the render function to run with the new state every time it changes
 state.subscribe(render);
+
 render();
 
 // Using event delegation for form submission
@@ -52,13 +56,12 @@ document.addEventListener("submit", (event) => {
     event.preventDefault();
     const form = event.target;
 
+    // These come from the input ids. We know they exist because we created them.
     state.addDish({
       name: form.name.value,
       assignedTo: form.assignedTo.value,
       estimatedTime: form.estimatedTime.value,
       temperature: form.temperature.value,
     });
-
-    form.reset();
   }
 });
