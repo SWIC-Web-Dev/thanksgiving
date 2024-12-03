@@ -1,8 +1,14 @@
-export default function Button(
+export default function Button({
   type = "button",
-  addlClasses = "",
-  onClick = () => {},
+  additionalClasses = "",
   text,
-) {
-  return `<button type="${type}" class="button ${addlClasses}" onclick="${onClick}">${text}</button>`;
+}) {
+  return `
+    <button 
+      type="${type}" 
+      class="rounded shadow transition-colors ${additionalClasses}"
+    >
+      ${text}
+    </button>
+  `;
 }
