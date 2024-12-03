@@ -50,8 +50,8 @@ state.subscribe(render);
 
 render();
 
-document.addEventListener("click", () => {
-  console.log("Clicked!");
+document.addEventListener("click", (event) => {
+  state.deleteDish(event.target.closest("tr").dataset.dish);
 });
 
 // Using event delegation for form submission

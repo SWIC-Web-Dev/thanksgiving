@@ -1,6 +1,7 @@
 import Button from "../button.js";
 
 export default function DishRow({
+  id,
   name,
   status,
   assignedTo,
@@ -8,7 +9,7 @@ export default function DishRow({
   temperature,
 }) {
   return `
-    <tr class="border-b *:p-2">
+    <tr class="border-b *:p-2" data-dish=${id}>
       <td>${name}</td>
       <td>${status}</td>
       <td>${assignedTo}</td>

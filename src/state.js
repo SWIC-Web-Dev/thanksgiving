@@ -36,5 +36,14 @@ export default (() => {
       // Update the state
       this.setState({ dishes: newDishes });
     },
+    deleteDish(dishId) {
+      // Filter out the dish with the given name
+      const newDishes = state.dishes.filter(
+        // * Be sure to compare the same type of values
+        (dish) => dish.id !== Number(dishId),
+      );
+
+      this.setState({ dishes: newDishes });
+    },
   };
 })();
